@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-11 06:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/users/models.py:39
+msgid "Email"
+msgstr "Пошта"
+
+#: apps/users/models.py:41
+msgid "First name"
+msgstr "Аты"
+
+#: apps/users/models.py:42
+msgid "Last name"
+msgstr "Жөні"
+
+#: apps/users/models.py:49
+msgid "Avatar"
+msgstr "Аватап"
+
+#: apps/users/models.py:52
+msgid "Preferred language"
+msgstr "Тіл таңдауы"
+
+#: apps/users/models.py:58
+msgid "Timezone"
+msgstr "Уақыт белдеуі"
+
+#: apps/users/serializers.py:15
+msgid "Invalid timezone. Must be valid IANA timezone."
+msgstr "Жасамсыз Уақыт белдеуі"
+
+#: apps/users/views.py:22
+msgid "Timezone updated successfully."
+msgstr "Уақыт белдеуі сәтті жаңартылды"
+
+#: settings/base.py:65
+msgid "English"
+msgstr "Ағылшын тілі"
+
+#: settings/base.py:66
+msgid "Russian"
+msgstr "Орыс тілі"
+
+#: settings/base.py:67
+msgid "Kazakh"
+msgstr "Қазақ тілі"

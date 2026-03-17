@@ -46,3 +46,14 @@ class Comment(models.Model):
     def __str__(self)->str:
         return f"Comment by{self.author}"
 
+class Category(models.Model):
+
+    name_en = models.CharField(max_length=100)
+
+    name_ru = models.CharField(max_length=100)
+
+    name_kz = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name_en
+

@@ -13,7 +13,15 @@ from .serializers import (
     CommentSerializer,
 )
 from .permissions import IsOwnerOrReadOnly
+from django.core.cache import cache
+from django.utils import translation
+from drf_spectacular.utils import extend_schema
 
+@extend_schema(
+    summary="List blog posts",
+    description="Returns a list of published blog posts. Results are cached in Redis and depend on the active language.",
+    tags=["Posts"],
+)
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
@@ -34,6 +42,35 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Post.objects.filter(status="published")
+
+    def list(self, request, *args, **kwargs):
+
+        lang = translation.get_language()
+
+        cache_key = f"posts_list_{lang}"
+
+        cached = cache.get(cache_key)
+        if cached:
+            return Response(cached)
+
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+
+        cache.set(cache_key, serializer.data, timeout=60)
+
+        return Response(serializer.data)
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+        cache.delete_pattern("posts_list_*")
+
+    def perform_update(self, serializer):
+        serializer.save()
+        cache.delete_pattern("posts_list_*")
+
+    def perform_destroy(self, instance):
+        instance.delete()
+        cache.delete_pattern("posts_list_*")
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)

@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from .models import Category, Tag, Post, Comment
+from django.utils import translation
 
 User = get_user_model()
 
@@ -27,3 +28,24 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = "__all__"
         read_only_fields = ("author",)
+
+from django.utils import translation
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Category
+        fields = ["id", "name"]
+
+    def get_name(self, obj):
+        lang = translation.get_language()
+
+        if lang == "ru":
+            return obj.name_ru
+
+        if lang == "kz":
+            return obj.name_kk
+
+        return obj.name_en

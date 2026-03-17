@@ -1,8 +1,13 @@
-from decouple import config, Csv
+from decouple import config, RepositoryEnv, Csv
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+config = Config(RepositoryEnv(BASE_DIR / ".env"))
 
 BLOG_ENV_ID = config("BLOG_ENV_ID", default="local")
 
-SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")
+SECRET_KEY = config("BLOG_SECRET_KEY", default="unsafe-secret-key")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config("BLOG_ALLOWED_HOSTS", default="127.0.0.1, localhost").split(",")

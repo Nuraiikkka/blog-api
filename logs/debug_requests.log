@@ -1,1 +1,403 @@
 2026-02-11 18:51:43,434 WARNING [django.request] Not Found: /aaaa
+2026-02-26 09:52:12,212 WARNING [django.request] Not Found: /
+2026-02-26 09:52:12,320 WARNING [django.request] Not Found: /favicon.ico
+2026-02-26 10:21:48,089 WARNING [django.request] Not Found: /api/auth/timezone/
+2026-02-26 10:37:35,894 WARNING [django.request] Not Found: /api/auth/timezone/
+2026-02-26 10:40:24,381 WARNING [django.request] Unauthorized: /api/auth/auth/timezone/
+2026-02-26 10:41:14,538 WARNING [django.request] Unauthorized: /api/auth/timezone/
+2026-02-26 10:42:55,013 WARNING [django.request] Method Not Allowed: /api/auth/token/
+2026-02-26 10:43:18,092 WARNING [django.request] Unauthorized: /api/auth/timezone/
+2026-02-26 10:46:24,826 WARNING [django.request] Unauthorized: /api/auth/timezone/
+2026-03-11 10:35:32,820 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+       ^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+2026-03-11 10:35:32,930 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+       ^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'user'
+2026-03-11 10:37:13,952 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:14,024 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:14,695 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:14,774 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:14,958 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:15,046 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:15,147 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:37:15,215 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:52,539 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:52,617 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,083 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,143 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,449 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,512 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,644 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,706 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,832 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:39:53,911 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:00,638 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:00,748 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:01,331 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:01,445 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:12,740 ERROR [django.request] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:13,675 ERROR [django.request] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:13,787 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-11 10:45:35,546 ERROR [django.request] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/middleware.py", line 11, in __call__
+    if request.user.is_authenticated and request.user.preffered_language:
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'preffered_language'. Did you mean: 'preferred_language'?
+2026-03-14 16:48:49,437 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 16:49:50,261 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 16:49:52,140 ERROR [django.request] Internal Server Error: /api/posts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 16:50:13,004 ERROR [django.request] Internal Server Error: /api/timezone/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 16:50:18,234 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 17:00:29,271 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'
+2026-03-14 17:00:30,268 ERROR [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nuraiaitbazar/Desktop/django/BlogApiHw1/apps/core/timezone_middleware.py", line 13, in __call__
+    response = self.get.rexponse(request)
+               ^^^^^^^^
+AttributeError: 'CustomTimezoneMiddleware' object has no attribute 'get'

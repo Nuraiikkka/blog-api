@@ -1,9 +1,7 @@
 import os
 from pathlib import Path
 from datetime import timedelta
-from .conf import SECRET_KEY, DEBUG, ALLOWED_HOSTS, REDIS_URL
-from .settings import DEFAULT_AUTO_FIELD
-from django.utils.log import RequireDebugTrue
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,25 +15,31 @@ INSTALLED_APPS = [
     "rest_framework",
     "apps.blog",
     "apps.users",
-
+    "apps.core",
+    "drf_spectacular"
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+
+    "apps.core.middleware.LanguageTimezoneMiddleware",
+
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
 
 ROOT_URLCONF = "settings.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -47,17 +51,34 @@ TEMPLATES = [
     }
 ]
 
+
 WSGI_APPLICATION = "settings.wsgi.application"
 ASGI_APPLICATION = "settings.asgi.application"
 
-LANGUAGE_CODE = "en-us"
+
+LANGUAGE_CODE = "en"
+USE_I18N = True
+USE_L10N = True
 TIME_ZONE = "UTC"
-USE_IN = True
 USE_TZ = True
+
+LANGUAGES = [
+    ("en", _("English")),
+    ("ru", _("Russian")),
+    ("kz", _("Kazakh")),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# SUPPORTED_LANGUAGES = ["en", "ru", "kz"]
 
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-STATIC_ROOT = os.path.join("media")
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -72,6 +93,9 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+                        
     "DEFAULT_THROTTLE_CLASSES": [
         "rest_framework.throttling.AnonRateThrottle",
         "rest_framework.throttling.UserRateThrottle",
@@ -79,7 +103,7 @@ REST_FRAMEWORK = {
     "DEFAULT_THROTTLE_RATES": {
         "anon": "10/min",
         "user": "20/min"
-    }
+    },
 }
 
 SIMPLE_JWT = {
@@ -150,5 +174,12 @@ LOGGING = {
     },
 }
 
-
-
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}

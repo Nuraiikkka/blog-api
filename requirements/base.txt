@@ -1,0 +1,7 @@
+python-decouple
+drf-spectacular
+httpx
+pytz
+django-filter
+django-redis
+redis
