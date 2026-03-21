@@ -1,0 +1,107 @@
+# Russian translations
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+msgid "Email is required"
+msgstr "Email обязателен"
+
+msgid "Passwords do not match."
+msgstr "Пароли не совпадают."
+
+msgid "Invalid timezone. Use a valid IANA timezone identifier."
+msgstr "Неверный часовой пояс. Используйте корректный идентификатор IANA."
+
+msgid "email address"
+msgstr "адрес электронной почты"
+
+msgid "first name"
+msgstr "имя"
+
+msgid "last name"
+msgstr "фамилия"
+
+msgid "active"
+msgstr "активен"
+
+msgid "staff status"
+msgstr "статус персонала"
+
+msgid "date joined"
+msgstr "дата регистрации"
+
+msgid "avatar"
+msgstr "аватар"
+
+msgid "preferred language"
+msgstr "предпочтительный язык"
+
+msgid "timezone"
+msgstr "часовой пояс"
+
+msgid "user"
+msgstr "пользователь"
+
+msgid "users"
+msgstr "пользователи"
+
+msgid "category"
+msgstr "категория"
+
+msgid "categories"
+msgstr "категории"
+
+msgid "tag"
+msgstr "тег"
+
+msgid "tags"
+msgstr "теги"
+
+msgid "post"
+msgstr "запись"
+
+msgid "posts"
+msgstr "записи"
+
+msgid "comment"
+msgstr "комментарий"
+
+msgid "comments"
+msgstr "комментарии"
+
+msgid "author"
+msgstr "автор"
+
+msgid "title"
+msgstr "заголовок"
+
+msgid "body"
+msgstr "содержимое"
+
+msgid "status"
+msgstr "статус"
+
+msgid "created at"
+msgstr "создано"
+
+msgid "updated at"
+msgstr "обновлено"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "name"
+msgstr "название"
+
+#, python-format
+msgid "Hello %(name)s,\n\nWelcome to Blog API! Your account has been created successfully.\n\nYou can now log in and start writing blog posts.\n\nBest regards,\nThe Blog API Team\n"
+msgstr "Здравствуйте, %(name)s,\n\nДобро пожаловать в Blog API! Ваш аккаунт успешно создан.\n\nТеперь вы можете войти и начать писать записи в блоге.\n\nС уважением,\nКоманда Blog API\n"
+
+#, python-format
+msgid "Welcome to Blog API, %(name)s!"
+msgstr "Добро пожаловать в Blog API, %(name)s!"
