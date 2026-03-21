@@ -2,7 +2,8 @@
 logs/*.log
 *.pyc
 __pycache__/
-env/
+/env/
+
 *.mo
 db.sqlite3
 staticfiles/
