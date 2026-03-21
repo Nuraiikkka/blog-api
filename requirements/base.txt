@@ -1,0 +1,14 @@
+Django==5.0.4
+djangorestframework==3.15.1
+djangorestframework-simplejwt==5.3.1
+python-decouple==3.8
+django-redis==5.4.0
+redis==5.0.4
+Pillow==10.3.0
+drf-nested-routers==0.93.4
+django-ratelimit==4.1.0
+httpx==0.27.0
+drf-spectacular==0.27.2
+pytz==2024.1
+django-parler==2.3
+django-parler-rest==2.2
