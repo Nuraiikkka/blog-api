@@ -19,12 +19,6 @@ A full-featured blog REST API built with Django REST Framework, JWT authenticati
 - OpenAPI docs: Swagger UI and ReDoc
 - Full logging with rotating file handler
 
-## Quick Start
-
-```bash
-bash scripts/start.sh
-```
-
 After startup:
 - API: http://127.0.0.1:8000/api/
 - Swagger: http://127.0.0.1:8000/api/docs/
@@ -84,28 +78,6 @@ docs/            # ERD image
 scripts/         # start.sh
 templates/       # Email templates
 logs/            # Log files (gitignored)
-```
-
-## Environment Variables
-
-Copy `settings/.env.example` to `settings/.env` and fill in the values:
-
-```
-BLOG_ENV_ID=local
-BLOG_SECRET_KEY=your-secret-key
-BLOG_DEBUG=True
-BLOG_ALLOWED_HOSTS=localhost,127.0.0.1
-BLOG_REDIS_URL=redis://localhost:6379/0
-BLOG_EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
-BLOG_DEFAULT_FROM_EMAIL=noreply@blogapi.com
-```
-
-## Redis Pub/Sub
-
-Listen for new comment events:
-
-```bash
-python manage.py listen_comments
 ```
 
 ## Management Commands
