@@ -1,17 +1,12 @@
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from django.urls import path
 
-from .views import CategoryViewSet, TagViewSet, PostViewSet, CommentViewSet
-from .views_stats import StatsView
+from apps.blog.views import PostViewSet, StatsView
 
 router = DefaultRouter()
-router.register("categories", CategoryViewSet, basename="category")
-router.register("tags", TagViewSet, basename="tag")
-router.register("posts", PostViewSet, basename="post")
-router.register("comments", CommentViewSet, basename="comment")
+router.register('posts', PostViewSet, basename='posts')
 
 urlpatterns = [
-    path("stats/", StatsView.as_view(), name="stats"),
+    path('', include(router.urls)),
+    path('stats/', StatsView.as_view(), name='stats'),
 ]
-
-urlpatterns += router.urls

@@ -1,59 +1,107 @@
+# Russian translations
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 06:53+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
 
-#: apps/users/models.py:39
-msgid "Email"
-msgstr "Почта"
+msgid "Email is required"
+msgstr "Email обязателен"
 
-#: apps/users/models.py:41
-msgid "First name"
-msgstr "Имя"
+msgid "Passwords do not match."
+msgstr "Пароли не совпадают."
 
-#: apps/users/models.py:42
-msgid "Last name"
-msgstr "Фамилия"
+msgid "Invalid timezone. Use a valid IANA timezone identifier."
+msgstr "Неверный часовой пояс. Используйте корректный идентификатор IANA."
 
-#: apps/users/models.py:49
-msgid "Avatar"
-msgstr "Ававтар"
+msgid "email address"
+msgstr "адрес электронной почты"
 
-#: apps/users/models.py:52
-msgid "Preferred language"
-msgstr "Предпочитаемый язык"
+msgid "first name"
+msgstr "имя"
 
-#: apps/users/models.py:58
-msgid "Timezone"
-msgstr "Часовый пояс"
+msgid "last name"
+msgstr "фамилия"
 
-#: apps/users/serializers.py:15
-msgid "Invalid timezone. Must be valid IANA timezone."
-msgstr "Недействительный часовый пояс. Должен быть IANA часовый пояс"
+msgid "active"
+msgstr "активен"
 
-#: apps/users/views.py:22
-msgid "Timezone updated successfully."
-msgstr "Часовый пояс успешно обновлено."
+msgid "staff status"
+msgstr "статус персонала"
 
-#: settings/base.py:65
-msgid "English"
-msgstr "Английский"
+msgid "date joined"
+msgstr "дата регистрации"
 
-#: settings/base.py:66
-msgid "Russian"
-msgstr "Русский"
+msgid "avatar"
+msgstr "аватар"
 
-#: settings/base.py:67
-msgid "Kazakh"
-msgstr "Казахский"
+msgid "preferred language"
+msgstr "предпочтительный язык"
+
+msgid "timezone"
+msgstr "часовой пояс"
+
+msgid "user"
+msgstr "пользователь"
+
+msgid "users"
+msgstr "пользователи"
+
+msgid "category"
+msgstr "категория"
+
+msgid "categories"
+msgstr "категории"
+
+msgid "tag"
+msgstr "тег"
+
+msgid "tags"
+msgstr "теги"
+
+msgid "post"
+msgstr "запись"
+
+msgid "posts"
+msgstr "записи"
+
+msgid "comment"
+msgstr "комментарий"
+
+msgid "comments"
+msgstr "комментарии"
+
+msgid "author"
+msgstr "автор"
+
+msgid "title"
+msgstr "заголовок"
+
+msgid "body"
+msgstr "содержимое"
+
+msgid "status"
+msgstr "статус"
+
+msgid "created at"
+msgstr "создано"
+
+msgid "updated at"
+msgstr "обновлено"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "name"
+msgstr "название"
+
+#, python-format
+msgid "Hello %(name)s,\n\nWelcome to Blog API! Your account has been created successfully.\n\nYou can now log in and start writing blog posts.\n\nBest regards,\nThe Blog API Team\n"
+msgstr "Здравствуйте, %(name)s,\n\nДобро пожаловать в Blog API! Ваш аккаунт успешно создан.\n\nТеперь вы можете войти и начать писать записи в блоге.\n\nС уважением,\nКоманда Blog API\n"
+
+#, python-format
+msgid "Welcome to Blog API, %(name)s!"
+msgstr "Добро пожаловать в Blog API, %(name)s!"
