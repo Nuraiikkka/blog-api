@@ -1,22 +1,19 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
 import os
-import sys
-from settings.conf import BLOG_ENV_ID
+
+from settings.conf import config
+
+ENV_ID = config('BLOG_ENV_ID', default='local')
+
+if ENV_ID == 'prod':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.env.prod')
+else:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.env.local')
+
+from django.core.management import execute_from_command_line  # noqa: E402
 
 
-def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', f"settings.env.{BLOG_ENV_ID}")
-    try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
-        raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
-    execute_from_command_line(sys.argv)
+def main() -> None:
+    execute_from_command_line(os.sys.argv)
 
 
 if __name__ == '__main__':

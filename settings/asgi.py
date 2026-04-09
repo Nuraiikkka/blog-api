@@ -1,16 +1,13 @@
-"""
-ASGI config for settings project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.1/howto/deployment/asgi/
-"""
-
 import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.settings')
+from settings.conf import config
+
+ENV_ID = config('BLOG_ENV_ID', default='local')
+if ENV_ID == 'prod':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.env.prod')
+else:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.env.local')
 
 application = get_asgi_application()

@@ -1,16 +1,14 @@
-from decouple import config, Csv
+import os
+from decouple import Config, RepositoryEnv
 
-BLOG_ENV_ID = config("BLOG_ENV_ID", default="local")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ENV_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
 
-SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")
-DEBUG = config("DEBUG", default=False, cast=bool)
+config = Config(RepositoryEnv(ENV_FILE))
 
-ALLOWED_HOSTS = config("BLOG_ALLOWED_HOSTS", default="127.0.0.1, localhost").split(",")
-
-REDIS_URL = config("BLOG_REDIS_URL", default="redis://127.0.0.1:6379/1")
-
-DB_NAME = config("BLOG_DB_NAME", default="")
-DB_USER = config("BLOG_DB_USER", default="")
-DB_PASSWORD = config("BLOG_DB_PASSWORD", default="")
-DB_HOST = config("BLOG_DB_HOST", default="")
-DB_PORT = config("BLOG_DB_PORT", default="5432")
+SECRET_KEY: str = config('BLOG_SECRET_KEY')
+DEBUG: bool = config('BLOG_DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS: list[str] = config('BLOG_ALLOWED_HOSTS', default='localhost').split(',')
+REDIS_URL: str = config('BLOG_REDIS_URL', default='redis://localhost:6379/0')
+EMAIL_BACKEND: str = config('BLOG_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+DEFAULT_FROM_EMAIL: str = config('BLOG_DEFAULT_FROM_EMAIL', default='noreply@blogapi.com')

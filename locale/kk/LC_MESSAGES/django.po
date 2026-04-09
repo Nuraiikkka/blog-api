@@ -1,0 +1,107 @@
+# Kazakh translations
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kk\n"
+
+msgid "Email is required"
+msgstr "Email міндетті"
+
+msgid "Passwords do not match."
+msgstr "Құпия сөздер сәйкес келмейді."
+
+msgid "Invalid timezone. Use a valid IANA timezone identifier."
+msgstr "Жарамсыз уақыт белдеуі. Жарамды IANA уақыт белдеуі идентификаторын пайдаланыңыз."
+
+msgid "email address"
+msgstr "электрондық пошта мекенжайы"
+
+msgid "first name"
+msgstr "аты"
+
+msgid "last name"
+msgstr "тегі"
+
+msgid "active"
+msgstr "белсенді"
+
+msgid "staff status"
+msgstr "қызметкер мәртебесі"
+
+msgid "date joined"
+msgstr "тіркелген күні"
+
+msgid "avatar"
+msgstr "аватар"
+
+msgid "preferred language"
+msgstr "қалаулы тіл"
+
+msgid "timezone"
+msgstr "уақыт белдеуі"
+
+msgid "user"
+msgstr "пайдаланушы"
+
+msgid "users"
+msgstr "пайдаланушылар"
+
+msgid "category"
+msgstr "санат"
+
+msgid "categories"
+msgstr "санаттар"
+
+msgid "tag"
+msgstr "тег"
+
+msgid "tags"
+msgstr "тегтер"
+
+msgid "post"
+msgstr "жазба"
+
+msgid "posts"
+msgstr "жазбалар"
+
+msgid "comment"
+msgstr "пікір"
+
+msgid "comments"
+msgstr "пікірлер"
+
+msgid "author"
+msgstr "автор"
+
+msgid "title"
+msgstr "тақырып"
+
+msgid "body"
+msgstr "мазмұн"
+
+msgid "status"
+msgstr "мәртебе"
+
+msgid "created at"
+msgstr "жасалған уақыт"
+
+msgid "updated at"
+msgstr "жаңартылған уақыт"
+
+msgid "Draft"
+msgstr "Жоба"
+
+msgid "Published"
+msgstr "Жарияланған"
+
+msgid "name"
+msgstr "атауы"
+
+#, python-format
+msgid "Hello %(name)s,\n\nWelcome to Blog API! Your account has been created successfully.\n\nYou can now log in and start writing blog posts.\n\nBest regards,\nThe Blog API Team\n"
+msgstr "Сәлем, %(name)s,\n\nBlog API-ге қош келдіңіз! Тіркелгіңіз сәтті жасалды.\n\nЕнді жүйеге кіріп, блог жазбаларын жаза аласыз.\n\nЖақсы тілектермен,\nBlog API тобы\n"
+
+#, python-format
+msgid "Welcome to Blog API, %(name)s!"
+msgstr "Blog API-ге қош келдіңіз, %(name)s!"
