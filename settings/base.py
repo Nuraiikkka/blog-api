@@ -18,6 +18,7 @@ DEBUG = DEBUG
 ALLOWED_HOSTS = ALLOWED_HOSTS
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,6 +32,8 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.blog',
     'apps.core',
+    'apps.notifications',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +68,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'settings.wsgi.application'
 ASGI_APPLICATION = 'settings.asgi.application'
+
+from settings.conf import config as _config
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [_config('BLOG_REDIS_URL', default='redis://localhost:6379/0')],
+        },
+    },
+}
+
+CELERY_BROKER_URL = _config('BLOG_CELERY_BROKER_URL', default='redis://localhost:6379/1')
+CELERY_RESULT_BACKEND = _config('BLOG_CELERY_BROKER_URL', default='redis://localhost:6379/1')
 
 AUTH_USER_MODEL = 'users.User'
 

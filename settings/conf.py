@@ -12,3 +12,4 @@ ALLOWED_HOSTS: list[str] = config('BLOG_ALLOWED_HOSTS', default='localhost').spl
 REDIS_URL: str = config('BLOG_REDIS_URL', default='redis://localhost:6379/0')
 EMAIL_BACKEND: str = config('BLOG_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 DEFAULT_FROM_EMAIL: str = config('BLOG_DEFAULT_FROM_EMAIL', default='noreply@blogapi.com')
+CELERY_BROKER_URL: str = config('BLOG_CELERY_BROKER_URL', default='redis://localhost:6379/1')

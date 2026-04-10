@@ -12,3 +12,8 @@ drf-spectacular==0.27.2
 pytz==2024.1
 django-parler==2.3
 django-parler-rest==2.2
+channels==4.1.0
+channels-redis==4.2.0
+celery==5.4.0
+flower==2.0.1
+daphne==4.1.2

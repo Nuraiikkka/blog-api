@@ -92,7 +92,8 @@ class UserViewSet(viewsets.GenericViewSet):
         refresh = RefreshToken.for_user(user)
         logger.info('User registered: %s', user.email)
 
-        self._send_welcome_email(user)
+        from apps.users.tasks import send_welcome_email
+        send_welcome_email.delay(user.id)
 
         return Response({
             'user': UserSerializer(user).data,

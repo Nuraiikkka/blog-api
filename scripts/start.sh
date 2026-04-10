@@ -14,7 +14,6 @@ step() { echo -e "${GREEN}[step]${NC} $1"; }
 warn() { echo -e "${YELLOW}[warn]${NC} $1"; }
 fail() { echo -e "${RED}[FAIL]${NC} $1"; exit 1; }
 
-# ── Step 1: Validate environment variables ────────────────────────────────────
 step "1. Validating environment variables..."
 if [ ! -f "$ENV_FILE" ]; then
     fail "Missing $ENV_FILE — copy settings/.env.example to settings/.env and fill in values."
@@ -63,7 +62,6 @@ env/bin/python manage.py compilemessages --locale ru --locale kk --locale en -v 
     warn "compilemessages returned non-zero (msgfmt may not be installed)"
 echo "  Translation files compiled."
 
-# ── Step 6: Create superuser ──────────────────────────────────────────────────
 step "6. Creating superuser..."
 SUPERUSER_EMAIL="admin@blogapi.com"
 SUPERUSER_PASSWORD="Admin1234!"

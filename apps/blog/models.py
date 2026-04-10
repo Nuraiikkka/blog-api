@@ -52,6 +52,7 @@ class Post(models.Model):
         verbose_name=_('category'),
     )
     tags = models.ManyToManyField(Tag, blank=True, related_name='posts', verbose_name=_('tags'))
+    publish_at = models.DateTimeField(_('publish at'), null=True, blank=True)
     status = models.CharField(
         _('status'),
         max_length=20,

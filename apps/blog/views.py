@@ -82,7 +82,9 @@ class PostViewSet(viewsets.ModelViewSet):
     def create(self, request: Request, *args, **kwargs) -> Response:
         logger.info('Post creation attempt by user: %s', request.user.email)
         response = super().create(request, *args, **kwargs)
-        self._invalidate_posts_cache()
+        from apps.blog.tasks import invalidate_posts_cache
+        invalidate_posts_cache.delay()
+        self._publish_post_event_if_published(response.data)
         return response
 
     @extend_schema(
@@ -102,7 +104,9 @@ class PostViewSet(viewsets.ModelViewSet):
     def partial_update(self, request: Request, *args, **kwargs) -> Response:
         logger.info('Post update attempt: %s by %s', kwargs.get('slug'), request.user.email)
         response = super().partial_update(request, *args, **kwargs)
-        self._invalidate_posts_cache()
+        from apps.blog.tasks import invalidate_posts_cache
+        invalidate_posts_cache.delay()
+        self._publish_post_event_if_published(response.data)
         return response
 
     @extend_schema(
@@ -113,15 +117,35 @@ class PostViewSet(viewsets.ModelViewSet):
     def destroy(self, request: Request, *args, **kwargs) -> Response:
         logger.info('Post delete attempt: %s by %s', kwargs.get('slug'), request.user.email)
         response = super().destroy(request, *args, **kwargs)
-        self._invalidate_posts_cache()
+        from apps.blog.tasks import invalidate_posts_cache
+        invalidate_posts_cache.delay()
         return response
 
     def _invalidate_posts_cache(self) -> None:
         from apps.users.constants import SUPPORTED_LANGUAGES
         for lang in SUPPORTED_LANGUAGES:
             for page in range(1, 20):
-                cache.delete(f'{CACHE_KEY_POSTS}_{lang}_page_{page}')
-        logger.info('Posts list cache invalidated')
+                cache.delete(f"{CACHE_KEY_POSTS}_{lang}_page_{page}")
+        logger.info("Posts list cache invalidated")
+
+    def _publish_post_event_if_published(self, post_data: dict) -> None:
+        from apps.blog.constants import PostStatus
+        if post_data.get("status") == PostStatus.PUBLISHED:
+            import redis as redis_client
+            from django.conf import settings
+            try:
+                r = redis_client.from_url(settings.REDIS_URL)
+                event = json.dumps({
+                    "post_id": post_data.get("id"),
+                    "title": post_data.get("title"),
+                    "slug": post_data.get("slug"),
+                    "author": post_data.get("author"),
+                    "published_at": post_data.get("updated_at") or post_data.get("created_at"),
+                })
+                r.publish("post_published", event)
+                logger.info("SSE post_published event sent for slug %s", post_data.get("slug"))
+            except Exception:
+                logger.exception("Failed to publish SSE post event")
 
     @extend_schema(
         summary='List comments for a post',
@@ -157,23 +181,9 @@ class PostViewSet(viewsets.ModelViewSet):
         comment = serializer.save(post=post, author=request.user)
         logger.info('Comment added to post %s by %s', post.slug, request.user.email)
 
-        self._publish_comment_event(comment)
+        from apps.notifications.tasks import process_new_comment
+        process_new_comment.delay(comment.id)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    def _publish_comment_event(self, comment: Comment) -> None:
-        import redis as redis_client
-        from django.conf import settings
-        try:
-            r = redis_client.from_url(settings.REDIS_URL)
-            event = json.dumps({
-                'post_slug': comment.post.slug,
-                'author_id': comment.author.id,
-                'body': comment.body,
-            })
-            r.publish('comments', event)
-            logger.info('Comment event published for post %s', comment.post.slug)
-        except Exception:
-            logger.exception('Failed to publish comment event')
 
 
 @extend_schema(tags=['Stats'])
