@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir -r requirements/base.txt
 
 COPY . .
 
+RUN mkdir -p /app/logs /app/db /app/staticfiles /app/media
+
 COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && chown -R appuser:appuser /app
 
